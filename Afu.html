@@ -6,146 +6,12 @@
     <title>AFU Berkah Mandiri - Jasa Konstruksi Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-        
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            z-index: 40;
-        }
-        
-        .mobile-menu.active {
-            display: block;
-        }
-        
-        .mobile-menu a {
-            display: block;
-            padding: 1rem;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .lg-hidden {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .md-hidden {
-                display: none !important;
-            }
-            
-            .hero-section {
-                padding-top: 6rem;
-                padding-bottom: 4rem;
-            }
-            
-            .hero-text {
-                text-align: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-columns {
-                flex-direction: column;
-            }
-            
-            .contact-info {
-                margin-top: 2rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .sm-hidden {
-                display: none !important;
-            }
-            
-            .hero-title {
-                font-size: 2.25rem;
-                line-height: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.875rem;
-                line-height: 2.25rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-gray-800">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-        <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -156,7 +22,7 @@
                     </span>
                 </div>
                 
-                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link font-medium text-gray-600 hover:text-blue-500">Beranda</a>
                     <a href="#services" class="nav-link font-medium text-gray-600 hover:text-blue-500">Layanan</a>
                     <a href="#projects" class="nav-link font-medium text-gray-600 hover:text-blue-500">Proyek</a>
@@ -164,56 +30,47 @@
                     <a href="#contact" class="nav-link font-medium text-gray-600 hover:text-blue-500">Kontak</a>
                 </div>
                 
-                <button id="mobileMenuButton" class="md:hidden text-gray-600 focus:outline-none">
+                <button class="md:hidden text-gray-600 focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <a href="#home" class="nav-link font-medium text-gray-600 hover:text-blue-500 hover:bg-gray-50">Beranda</a>
-                <a href="#services" class="nav-link font-medium text-gray-600 hover:text-blue-500 hover:bg-gray-50">Layanan</a>
-                <a href="#projects" class="nav-link font-medium text-gray-600 hover:text-blue-500 hover:bg-gray-50">Proyek</a>
-                <a href="#about" class="nav-link font-medium text-gray-600 hover:text-blue-500 hover:bg-gray-50">Tentang</a>
-                <a href="#contact" class="nav-link font-medium text-gray-600 hover:text-blue-500 hover:bg-gray-50">Kontak</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient pt-24 md:pt-32 pb-12 md:pb-20 hero-section">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section id="home" class="hero-gradient pt-32 pb-20">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 hero-text">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 md:mb-6 hero-title">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                         Solusi Konstruksi <span class="text-blue-500">Modern</span> untuk Masa Depan
                     </h1>
-                    <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
                         AFU Berkah Mandiri menghadirkan inovasi dalam setiap proyek konstruksi dengan pendekatan profesional dan teknologi terkini.
                     </p>
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 hero-buttons">
-                        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 text-center">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
                             Mulai Proyek Anda
                         </a>
-                        <a href="#projects" class="border border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-500 font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 text-center">
+                        <a href="#projects" class="border border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-500 font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
                             Lihat Portofolio
                         </a>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 relative mt-8 md:mt-12 lg:mt-0">
+                <div class="lg:w-1/2 relative mt-12 lg:mt-0">
                     <div class="relative">
                         <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                              alt="Modern Construction" 
                              class="rounded-xl shadow-xl w-full max-w-2xl floating">
-                        <div class="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white p-3 md:p-4 rounded-xl shadow-lg lg-hidden">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg hidden lg:block">
                             <div class="flex items-center">
-                                <div class="bg-blue-100 p-2 md:p-3 rounded-full mr-3 md:mr-4">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
                                     <i class="fas fa-check text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-sm md:text-base">10+ Tahun</p>
-                                    <p class="text-xs md:text-sm text-gray-500">Pengalaman</p>
+                                    <p class="font-bold">10+ Tahun</p>
+                                    <p class="text-sm text-gray-500">Pengalaman</p>
                                 </div>
                             </div>
                         </div>
@@ -224,98 +81,98 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-12 md:py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16">
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
                 <span class="text-blue-500 font-medium">LAYANAN KAMI</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-4 section-title">Keunggulan <span class="text-blue-500">Profesional</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Keunggulan <span class="text-blue-500">Profesional</span></h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="max-w-2xl mx-auto text-gray-500 mt-4 md:mt-6 text-sm md:text-base">
+                <p class="max-w-2xl mx-auto text-gray-500 mt-6">
                     Kami menyediakan berbagai layanan konstruksi berkualitas tinggi dengan standar internasional.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-home text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Konstruksi Bangunan</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Konstruksi Bangunan</h3>
+                    <p class="text-gray-500">
                         Pembangunan struktur komersial dan residensial dengan material berkualitas dan desain modern.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-tools text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Renovasi & Restorasi</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Renovasi & Restorasi</h3>
+                    <p class="text-gray-500">
                         Transformasi bangunan lama menjadi lebih fungsional dan estetik tanpa mengorbankan struktur.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-drafting-compass text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-drafting-compass text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Desain Arsitektur</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Desain Arsitektur</h3>
+                    <p class="text-gray-500">
                         Solusi desain kreatif yang memadukan estetika dan fungsionalitas untuk kebutuhan spesifik Anda.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-road text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-road text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Konstruksi Jalan</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Konstruksi Jalan</h3>
+                    <p class="text-gray-500">
                         Pembangunan infrastruktur jalan dengan material berkualitas dan teknologi terkini.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-water text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-water text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Instalasi Plumbing</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Instalasi Plumbing</h3>
+                    <p class="text-gray-500">
                         Sistem saluran air yang efisien dan tahan lama untuk berbagai jenis bangunan.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 card-hover">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-                        <i class="fas fa-bolt text-blue-500 text-lg md:text-xl"></i>
+                <div class="bg-gray-50 rounded-xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-blue-500 text-xl"></i>
                     </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Instalasi Listrik</h3>
-                    <p class="text-gray-500 text-sm md:text-base">
+                    <h3 class="text-xl font-bold mb-3">Instalasi Listrik</h3>
+                    <p class="text-gray-500">
                         Pemasangan sistem kelistrikan yang aman dan sesuai standar untuk berbagai kebutuhan.
                     </p>
-                    <a href="#" class="inline-block mt-3 md:mt-4 text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base">
+                    <a href="#" class="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium">
                         Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
@@ -324,54 +181,54 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-12 md:py-16 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center stats-grid">
-                <div class="p-3 md:p-4">
-                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2 text-blue-400">150+</div>
-                    <p class="text-gray-300 text-sm md:text-base">Proyek Selesai</p>
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2 text-blue-400">150+</div>
+                    <p class="text-gray-300">Proyek Selesai</p>
                 </div>
-                <div class="p-3 md:p-4">
-                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2 text-blue-400">50+</div>
-                    <p class="text-gray-300 text-sm md:text-base">Klien Puas</p>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2 text-blue-400">50+</div>
+                    <p class="text-gray-300">Klien Puas</p>
                 </div>
-                <div class="p-3 md:p-4">
-                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2 text-blue-400">10+</div>
-                    <p class="text-gray-300 text-sm md:text-base">Tahun Pengalaman</p>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2 text-blue-400">10+</div>
+                    <p class="text-gray-300">Tahun Pengalaman</p>
                 </div>
-                <div class="p-3 md:p-4">
-                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 md:mb-2 text-blue-400">24/7</div>
-                    <p class="text-gray-300 text-sm md:text-base">Layanan Support</p>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2 text-blue-400">24/7</div>
+                    <p class="text-gray-300">Layanan Support</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16">
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
                 <span class="text-blue-500 font-medium">PORTOFOLIO</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-4 section-title">Proyek <span class="text-blue-500">Terbaru</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Proyek <span class="text-blue-500">Terbaru</span></h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="max-w-2xl mx-auto text-gray-500 mt-4 md:mt-6 text-sm md:text-base">
+                <p class="max-w-2xl mx-auto text-gray-500 mt-6">
                     Beberapa contoh proyek yang telah kami selesaikan dengan standar kualitas tinggi.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 sm:h-56 md:h-60 overflow-hidden">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                              alt="Modern House" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                     </div>
-                    <div class="p-5 md:p-6">
+                    <div class="p-6">
                         <span class="text-sm text-blue-500">Residensial</span>
-                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-2 md:mb-3">Rumah Modern Tipe 45</h3>
-                        <p class="text-gray-500 text-sm md:text-base mb-3 md:mb-4">Pembangunan rumah modern dengan konsep minimalis di Bekasi.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base flex items-center">
+                        <h3 class="text-xl font-bold mt-2 mb-3">Rumah Modern Tipe 45</h3>
+                        <p class="text-gray-500 mb-4">Pembangunan rumah modern dengan konsep minimalis di Bekasi.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium flex items-center">
                             Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -379,16 +236,16 @@
                 
                 <!-- Project 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 sm:h-56 md:h-60 overflow-hidden">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
                              alt="Office Building" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                     </div>
-                    <div class="p-5 md:p-6">
+                    <div class="p-6">
                         <span class="text-sm text-blue-500">Komersial</span>
-                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-2 md:mb-3">Gedung Perkantoran 5 Lantai</h3>
-                        <p class="text-gray-500 text-sm md:text-base mb-3 md:mb-4">Konstruksi gedung perkantoran modern di Jakarta Pusat.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base flex items-center">
+                        <h3 class="text-xl font-bold mt-2 mb-3">Gedung Perkantoran 5 Lantai</h3>
+                        <p class="text-gray-500 mb-4">Konstruksi gedung perkantoran modern di Jakarta Pusat.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium flex items-center">
                             Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -396,24 +253,24 @@
                 
                 <!-- Project 3 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 sm:h-56 md:h-60 overflow-hidden">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                              alt="Highway Construction" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                     </div>
-                    <div class="p-5 md:p-6">
+                    <div class="p-6">
                         <span class="text-sm text-blue-500">Infrastruktur</span>
-                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-2 md:mb-3">Pembangunan Jalan Tol</h3>
-                        <p class="text-gray-500 text-sm md:text-base mb-3 md:mb-4">Proyek pembangunan jalan tol sepanjang 5 km di Jawa Barat.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium text-sm md:text-base flex items-center">
+                        <h3 class="text-xl font-bold mt-2 mb-3">Pembangunan Jalan Tol</h3>
+                        <p class="text-gray-500 mb-4">Proyek pembangunan jalan tol sepanjang 5 km di Jawa Barat.</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium flex items-center">
                             Lihat Detail <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-8 md:mt-12">
-                <a href="#" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 text-sm md:text-base">
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-medium py-3 px-6 rounded-lg transition duration-300">
                     Lihat Semua Proyek
                 </a>
             </div>
@@ -421,10 +278,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 md:py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 lg:pr-8 xl:pr-12">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
                     <img src="https://images.unsplash.com/photo-1581093450023-8af2c0d75c32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                          alt="About Us" 
                          class="rounded-xl shadow-lg w-full">
@@ -432,57 +289,57 @@
                 
                 <div class="lg:w-1/2">
                     <span class="text-blue-500 font-medium">TENTANG KAMI</span>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-4 md:mb-6 section-title">Membangun Masa Depan <span class="text-blue-500">Bersama</span></h2>
-                    <div class="w-16 h-1 bg-blue-500 mb-4 md:mb-6"></div>
-                    <p class="text-gray-500 text-sm md:text-base mb-4 md:mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Membangun Masa Depan <span class="text-blue-500">Bersama</span></h2>
+                    <div class="w-16 h-1 bg-blue-500 mb-6"></div>
+                    <p class="text-gray-500 mb-6">
                         AFU Berkah Mandiri didirikan pada tahun 2012 dengan visi untuk menghadirkan solusi konstruksi yang inovatif dan berkualitas tinggi. 
                         Dengan tim ahli yang berpengalaman, kami berkomitmen untuk memberikan hasil terbaik dalam setiap proyek.
                     </p>
-                    <p class="text-gray-500 text-sm md:text-base mb-6 md:mb-8">
+                    <p class="text-gray-500 mb-8">
                         Kami percaya bahwa fondasi yang kuat dimulai dengan integritas, profesionalisme, dan perhatian terhadap detail. 
                         Setiap proyek kami tangani dengan standar kualitas yang ketat untuk memastikan kepuasan pelanggan.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-3 md:mr-4">
-                                <i class="fas fa-check text-blue-500 text-sm md:text-base"></i>
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check text-blue-500"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 text-sm md:text-base">Material Berkualitas</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">Hanya menggunakan material terbaik untuk hasil konstruksi yang tahan lama.</p>
+                                <h4 class="font-bold mb-1">Material Berkualitas</h4>
+                                <p class="text-gray-500 text-sm">Hanya menggunakan material terbaik untuk hasil konstruksi yang tahan lama.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-3 md:mr-4">
-                                <i class="fas fa-check text-blue-500 text-sm md:text-base"></i>
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check text-blue-500"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 text-sm md:text-base">Tenaga Ahli</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">Tim profesional dengan sertifikasi dan pengalaman luas.</p>
+                                <h4 class="font-bold mb-1">Tenaga Ahli</h4>
+                                <p class="text-gray-500 text-sm">Tim profesional dengan sertifikasi dan pengalaman luas.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-3 md:mr-4">
-                                <i class="fas fa-check text-blue-500 text-sm md:text-base"></i>
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check text-blue-500"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 text-sm md:text-base">Garansi Pekerjaan</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">Memberikan garansi untuk setiap pekerjaan yang kami lakukan.</p>
+                                <h4 class="font-bold mb-1">Garansi Pekerjaan</h4>
+                                <p class="text-gray-500 text-sm">Memberikan garansi untuk setiap pekerjaan yang kami lakukan.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-lg mr-3 md:mr-4">
-                                <i class="fas fa-check text-blue-500 text-sm md:text-base"></i>
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-check text-blue-500"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1 text-sm md:text-base">Harga Kompetitif</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">Penawaran harga terbaik dengan kualitas pekerjaan terjamin.</p>
+                                <h4 class="font-bold mb-1">Harga Kompetitif</h4>
+                                <p class="text-gray-500 text-sm">Penawaran harga terbaik dengan kualitas pekerjaan terjamin.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="#contact" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 text-sm md:text-base">
+                    <a href="#contact" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
                         Hubungi Kami
                     </a>
                 </div>
@@ -491,33 +348,33 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16">
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
                 <span class="text-blue-500 font-medium">TESTIMONI</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-4 section-title">Apa Kata <span class="text-blue-500">Klien Kami</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Apa Kata <span class="text-blue-500">Klien Kami</span></h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="max-w-2xl mx-auto text-gray-500 mt-4 md:mt-6 text-sm md:text-base">
+                <p class="max-w-2xl mx-auto text-gray-500 mt-6">
                     Berikut beberapa testimoni dari klien yang telah bekerja sama dengan kami.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4 md:mb-6">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden mr-3 md:mr-4">
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Budi Santoso" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm md:text-base">Budi Santoso</h4>
-                            <p class="text-gray-500 text-xs md:text-sm">Pemilik Rumah</p>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <p class="text-gray-500 text-sm">Pemilik Rumah</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm md:text-base mb-4 md:mb-6">
+                    <p class="text-gray-600 mb-6">
                         "Sangat puas dengan hasil pembangunan rumah oleh AFU Berkah Mandiri. Pekerjaan tepat waktu dan hasilnya sesuai ekspektasi. Tim profesional dan komunikatif."
                     </p>
-                    <div class="flex text-yellow-400 text-sm md:text-base">
+                    <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -527,20 +384,20 @@
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4 md:mb-6">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden mr-3 md:mr-4">
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dewi Lestari" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm md:text-base">Dewi Lestari</h4>
-                            <p class="text-gray-500 text-xs md:text-sm">Manajer Proyek</p>
+                            <h4 class="font-bold">Dewi Lestari</h4>
+                            <p class="text-gray-500 text-sm">Manajer Proyek</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm md:text-base mb-4 md:mb-6">
+                    <p class="text-gray-600 mb-6">
                         "AFU Berkah Mandiri menjadi mitra yang sangat andal untuk proyek pembangunan kantor kami. Mereka memberikan solusi kreatif untuk tantangan teknis yang kami hadapi."
                     </p>
-                    <div class="flex text-yellow-400 text-sm md:text-base">
+                    <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -550,20 +407,20 @@
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4 md:mb-6">
-                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden mr-3 md:mr-4">
+                <div class="bg-white p-8 rounded-xl shadow-sm card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Hendra Wijaya" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm md:text-base">Hendra Wijaya</h4>
-                            <p class="text-gray-500 text-xs md:text-sm">Developer Properti</p>
+                            <h4 class="font-bold">Hendra Wijaya</h4>
+                            <p class="text-gray-500 text-sm">Developer Properti</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm md:text-base mb-4 md:mb-6">
+                    <p class="text-gray-600 mb-6">
                         "Sudah beberapa kali bekerja sama dengan AFU Berkah Mandiri untuk proyek properti kami. Konsisten memberikan hasil terbaik dengan manajemen proyek yang rapi."
                     </p>
-                    <div class="flex text-yellow-400 text-sm md:text-base">
+                    <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -576,37 +433,37 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16">
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
                 <span class="text-blue-500 font-medium">HUBUNGI KAMI</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 mb-4 section-title">Siap Membantu <span class="text-blue-500">Proyek Anda</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Siap Membantu <span class="text-blue-500">Proyek Anda</span></h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="max-w-2xl mx-auto text-gray-500 mt-4 md:mt-6 text-sm md:text-base">
+                <p class="max-w-2xl mx-auto text-gray-500 mt-6">
                     Silakan hubungi kami untuk konsultasi atau informasi lebih lanjut tentang layanan kami.
                 </p>
             </div>
             
-            <div class="flex flex-col lg:flex-row contact-columns">
-                <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 lg:pr-8 xl:pr-12">
-                    <form class="space-y-4 md:space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-1 md:mb-2 text-sm md:text-base">Nama Lengkap</label>
-                                <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base" placeholder="Nama Anda">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nama Anda">
                             </div>
                             <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-1 md:mb-2 text-sm md:text-base">Email</label>
-                                <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base" placeholder="Email Anda">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Email Anda">
                             </div>
                         </div>
                         <div>
-                            <label for="phone" class="block text-gray-700 font-medium mb-1 md:mb-2 text-sm md:text-base">Nomor Telepon</label>
-                            <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base" placeholder="Nomor Telepon">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nomor Telepon">
                         </div>
                         <div>
-                            <label for="service" class="block text-gray-700 font-medium mb-1 md:mb-2 text-sm md:text-base">Jenis Layanan</label>
-                            <select id="service" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Jenis Layanan</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                 <option value="">Pilih layanan yang dibutuhkan</option>
                                 <option value="building">Konstruksi Bangunan</option>
                                 <option value="renovation">Renovasi & Restorasi</option>
@@ -617,77 +474,77 @@
                             </select>
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-1 md:mb-2 text-sm md:text-base">Pesan</label>
-                            <textarea id="message" rows="4" class="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base" placeholder="Deskripsikan kebutuhan proyek Anda"></textarea>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Deskripsikan kebutuhan proyek Anda"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 text-sm md:text-base">
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
                             Kirim Pesan
                         </button>
                     </form>
                 </div>
                 
-                <div class="lg:w-1/2 lg:pl-8 xl:pl-12 contact-info">
-                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl h-full">
-                        <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Informasi Kontak</h3>
+                <div class="lg:w-1/2 lg:pl-12">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
                         
-                        <div class="space-y-4 md:space-y-6">
+                        <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
-                                    <i class="fas fa-map-marker-alt text-blue-500 text-sm md:text-base"></i>
+                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1 text-sm md:text-base">Alamat Kantor</h4>
-                                    <p class="text-gray-600 text-sm md:text-base">Jl. Raya Bekasi Km. 22, Cakung, Jakarta Timur 13910</p>
+                                    <h4 class="font-bold mb-1">Alamat Kantor</h4>
+                                    <p class="text-gray-600">Jl. Raya Bekasi Km. 22, Cakung, Jakarta Timur 13910</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
-                                    <i class="fas fa-phone-alt text-blue-500 text-sm md:text-base"></i>
+                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone-alt text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1 text-sm md:text-base">Telepon</h4>
-                                    <p class="text-gray-600 text-sm md:text-base">(021) 1234-5678</p>
-                                    <p class="text-gray-600 text-sm md:text-base">0812-3456-7890</p>
+                                    <h4 class="font-bold mb-1">Telepon</h4>
+                                    <p class="text-gray-600">(021) 1234-5678</p>
+                                    <p class="text-gray-600">0812-3456-7890</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
-                                    <i class="fas fa-envelope text-blue-500 text-sm md:text-base"></i>
+                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1 text-sm md:text-base">Email</h4>
-                                    <p class="text-gray-600 text-sm md:text-base">info@afuberkahmandiri.com</p>
-                                    <p class="text-gray-600 text-sm md:text-base">marketing@afuberkahmandiri.com</p>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <p class="text-gray-600">info@afuberkahmandiri.com</p>
+                                    <p class="text-gray-600">marketing@afuberkahmandiri.com</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
-                                    <i class="fas fa-clock text-blue-500 text-sm md:text-base"></i>
+                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-clock text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1 text-sm md:text-base">Jam Operasional</h4>
-                                    <p class="text-gray-600 text-sm md:text-base">Senin - Jumat: 08.00 - 17.00 WIB</p>
-                                    <p class="text-gray-600 text-sm md:text-base">Sabtu: 08.00 - 14.00 WIB</p>
+                                    <h4 class="font-bold mb-1">Jam Operasional</h4>
+                                    <p class="text-gray-600">Senin - Jumat: 08.00 - 17.00 WIB</p>
+                                    <p class="text-gray-600">Sabtu: 08.00 - 14.00 WIB</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-6 md:mt-8">
-                            <h4 class="font-bold mb-3 md:mb-4 text-sm md:text-base">Ikuti Kami</h4>
-                            <div class="flex space-x-3 md:space-x-4">
-                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition duration-300 text-sm md:text-base">
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Ikuti Kami</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition duration-300">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition duration-300 text-sm md:text-base">
+                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition duration-300">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition duration-300 text-sm md:text-base">
+                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition duration-300">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center transition duration-300 text-sm md:text-base">
+                                <a href="#" class="bg-gray-200 hover:bg-blue-500 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition duration-300">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
@@ -699,7 +556,7 @@
     </section>
 
     <!-- Map Section -->
-    <div class="h-64 sm:h-80 md:h-96 w-full bg-gray-200">
+    <div class="h-96 w-full bg-gray-200">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.85412531529447!3d-6.194962662195379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f433014b6e4b%3A0x1e0e5e0b0e5e0b0e!2sJl.%20Raya%20Bekasi%20Km.%2022%2C%20Cakung%2C%20Jakarta%20Timur%2013910!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" 
                 width="100%" 
                 height="100%" 
@@ -709,149 +566,93 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 md:py-12">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 footer-grid">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center mb-4 md:mb-6">
-                        <div class="w-8 h-8 md:w-10 md:h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-2 md:mr-3">
-                            <i class="fas fa-building text-white text-lg md:text-xl"></i>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-building text-white text-xl"></i>
                         </div>
-                        <span class="text-lg md:text-xl font-bold">
+                        <span class="text-xl font-bold">
                             <span class="text-blue-400">AFU</span> BERKAH MANDIRI
                         </span>
                     </div>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
+                    <p class="text-gray-400 mb-4">
                         Perusahaan konstruksi profesional dengan pengalaman lebih dari 10 tahun melayani berbagai proyek konstruksi di Indonesia.
                     </p>
-                    <div class="flex space-x-3 md:space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-sm md:text-base">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-sm md:text-base">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-sm md:text-base">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-sm md:text-base">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-base md:text-lg font-bold mb-3 md:mb-6">Layanan</h4>
-                    <ul class="space-y-2 md:space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Konstruksi Bangunan</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Renovasi & Restorasi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Desain Arsitektur</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Konstruksi Jalan</a></li>
+                    <h4 class="text-lg font-bold mb-6">Layanan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Konstruksi Bangunan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Renovasi & Restorasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Desain Arsitektur</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Konstruksi Jalan</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-base md:text-lg font-bold mb-3 md:mb-6">Perusahaan</h4>
-                    <ul class="space-y-2 md:space-y-3">
-                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Tentang Kami</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Proyek Kami</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Blog</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Karir</a></li>
+                    <h4 class="text-lg font-bold mb-6">Perusahaan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition duration-300">Tentang Kami</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-400 transition duration-300">Proyek Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition duration-300">Karir</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-base md:text-lg font-bold mb-3 md:mb-6">Hubungi Kami</h4>
-                    <ul class="space-y-2 md:space-y-3">
+                    <h4 class="text-lg font-bold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-3">
                         <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-blue-400 mt-0.5 md:mt-1 mr-2 md:mr-3 text-xs md:text-sm"></i>
-                            <span class="text-gray-400 text-xs md:text-sm">Jl. Raya Bekasi Km. 22, Jakarta Timur</span>
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">Jl. Raya Bekasi Km. 22, Jakarta Timur</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone-alt text-blue-400 mr-2 md:mr-3 text-xs md:text-sm"></i>
-                            <span class="text-gray-400 text-xs md:text-sm">(021) 1234-5678</span>
+                            <i class="fas fa-phone-alt text-blue-400 mr-3"></i>
+                            <span class="text-gray-400">(021) 1234-5678</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-blue-400 mr-2 md:mr-3 text-xs md:text-sm"></i>
-                            <span class="text-gray-400 text-xs md:text-sm">info@afuberkahmandiri.com</span>
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span class="text-gray-400">info@afuberkahmandiri.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-0">
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
                     © 2023 AFU Berkah Mandiri. All rights reserved.
                 </p>
-                <div class="flex space-x-4 md:space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300 text-xs md:text-sm">Terms of Service</a>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
-        <i class="fas fa-arrow-up text-sm md:text-base"></i>
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.querySelector('form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
-                contactForm.reset();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
